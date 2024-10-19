@@ -10,5 +10,7 @@ use (
     04-more-data/create
     04-more-data/load
     05-web-app
-    
+    06-data-lifetime
+    07-get-all
+    08-animals
 )

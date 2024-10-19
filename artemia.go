@@ -364,4 +364,3 @@ func CreateFieldFilter(fieldName string, expectedValue interface{}) func(interfa
 		return reflect.DeepEqual(field.Interface(), expectedValue)
 	}
 }
-
