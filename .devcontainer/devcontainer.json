@@ -1,0 +1,36 @@
+{
+	"name": "Golang IDE",
+
+	"dockerComposeFile": "compose.yml",
+	"service": "devcontainer",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vallyscode.crayons",
+				"ms-azuretools.vscode-docker",
+				"golang.go",
+				"Tobermory.es6-string-html",
+				"tamasfe.even-better-toml",
+				"hediet.vscode-drawio",
+				"aaron-bond.better-comments",
+				"dooez.alt-catppuccin-vsc",
+				"gitpod.gitpod-theme",
+				"PKief.material-icon-theme",
+				"PKief.material-product-icons",
+				"wayou.vscode-todo-highlight"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/git:1": {
+		  "version": "latest"
+		}
+	},
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached"
+	],
+	"postCreateCommand": "go version && tinygo version && git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"remoteUser": "${localEnv:USER}"
+}
